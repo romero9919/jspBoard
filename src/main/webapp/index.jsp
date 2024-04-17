@@ -12,6 +12,7 @@
 <jsp:include page="inc/aside.jsp" />
 <%
     HttpSession sess = request.getSession(true);
+	
     String sname = request.getParameter("searchname");  //검색
     String svalue = request.getParameter("searchvalue");
     ServletContext cont = getServletContext();
@@ -49,6 +50,7 @@
     
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
     NumberFormat formatter = NumberFormat.getInstance();   
+    
     
  %>
     <section>

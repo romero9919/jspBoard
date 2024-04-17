@@ -9,8 +9,10 @@ import javax.naming.NamingException;
 import jspBoard.dao.DBConnect;
 import jspBoard.dao.JBoardCommentDao;
 import jspBoard.dao.JBoardDao;
+import jspBoard.dao.MembersDao;
 import jspBoard.dto.BDto;
 import jspBoard.dto.CDto;
+import jspBoard.dto.MDto;
 
 public class DbWorks { 
 	private int limitPage;
@@ -70,7 +72,6 @@ public class DbWorks {
 		}
 		return lists;
 	}
-	
 	//검색 목록
 	public ArrayList<BDto> getSearchList(){
 		ArrayList<BDto> lists = null;
@@ -85,6 +86,37 @@ public class DbWorks {
 		}
 		return lists;
 	}
+	
+	// 유저 목록
+		public ArrayList<MDto> getUserList(){
+			ArrayList<MDto> lists = null;
+			try {
+				conn = db.getConnection();
+				MembersDao dao = new MembersDao(conn);
+				lists = dao.selectDB(limitPage, listCount);
+			} catch (SQLException | NamingException e) {
+				e.printStackTrace();
+			} finally {
+				db.closeConnection();
+			}
+			return lists;
+		}
+	
+	
+	//검색 목록
+		public ArrayList<MDto> getUserSearchList(){
+			ArrayList<MDto> lists = null;
+			try {
+				conn = db.getConnection();
+				MembersDao dao = new MembersDao(conn);
+				lists = dao.selectDB(limitPage, listCount, sname, svalue);
+			} catch (SQLException | NamingException e) {
+				e.printStackTrace();
+			} finally {
+				db.closeConnection();
+			}
+			return lists;
+		}
 	
 	//contents 보기
 	public BDto getSelectOne() {

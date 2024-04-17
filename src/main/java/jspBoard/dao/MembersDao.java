@@ -4,13 +4,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 
+import jspBoard.dto.BDto;
 import jspBoard.dto.MDto;
 
 public class MembersDao {
 
 	//필드
 	PreparedStatement pstmt = null;
+	Statement stmt = null;
 	ResultSet rs = null;
 	Connection conn;
 	
@@ -104,5 +109,88 @@ public class MembersDao {
 		//System.out.println(res);
 		return res;
 	}
+	
+	 //select
+    public ArrayList<MDto> selectDB(int limitPage, int listCount){
+    	
+    	ArrayList<MDto> dtos = new ArrayList<>();
+   
+    	String sql = "select * from members order by id asc"
+    			+ " limit ?, ?";
+    	try {
+    	  pstmt = conn.prepareStatement(sql);
+    	  pstmt.setInt(1, limitPage);
+    	  pstmt.setInt(2, listCount);
+    	  	  
+    	  rs = pstmt.executeQuery();
+    	
+    	  while(rs.next()) {
+    		 int id = rs.getInt("id");
+    		 String userid = rs.getString("userid");
+    		 String username = rs.getString("username");
+    		 String email = rs.getString("useremail");
+    		 String userrole = rs.getString("role");
+    		 
+    		 MDto mDto = new MDto();
+    		 mDto.setId(id);
+    		 mDto.setUserid(userid);
+    		 mDto.setUsername(username);
+    		 mDto.setUseremail(email);
+    		 mDto.setRole(userrole);
+    		 dtos.add(mDto);
+    	  }
+    	} catch(SQLException e) {
+    		e.printStackTrace();
+    	} finally {
+    		try {
+    		   if(rs != null) rs.close();
+    		   if(pstmt != null) pstmt.close();
+    		}catch(SQLException e) {e.printStackTrace();}   
+    	}
+    	
+    	return dtos;
+    }
+    
+    //select
+    public ArrayList<MDto> selectDB(int limitPage, int listCount, String name, String value){
+    	
+    	ArrayList<MDto> dtos = new ArrayList<>();
+   
+    	String sql = "select * from members where "+name+" LIKE ? order by id asc"
+    			+ " limit ?, ?";
+    	try {
+    	  pstmt = conn.prepareStatement(sql);
+    	  pstmt.setString(1, "%"+value+"%");
+    	  pstmt.setInt(1, limitPage);
+    	  pstmt.setInt(2, listCount);
+    	  	  
+    	  rs = pstmt.executeQuery();
+    	
+    	  while(rs.next()) {
+    		 int id = rs.getInt("id");
+    		 String userid = rs.getString("userid");
+    		 String username = rs.getString("username");
+    		 String email = rs.getString("useremail");
+    		 String userrole = rs.getString("role");
+    		 
+    		 MDto mDto = new MDto();
+    		 mDto.setId(id);
+    		 mDto.setUserid(userid);
+    		 mDto.setUsername(username);
+    		 mDto.setUseremail(email);
+    		 mDto.setRole(userrole);
+    		 dtos.add(mDto);
+    	  }
+    	} catch(SQLException e) {
+    		e.printStackTrace();
+    	} finally {
+    		try {
+    		   if(rs != null) rs.close();
+    		   if(pstmt != null) pstmt.close();
+    		}catch(SQLException e) {e.printStackTrace();}   
+    	}
+    	
+    	return dtos;
+    }
 	
 }

@@ -44,8 +44,8 @@
           <li><p>환영합니다. <%=username %>님</p></li>
           <li><a href="memedit.jsp?mid=<%=mid%>">회원정보 수정</a></li>
           <li><a href="logout">로그아웃</a></li>
-          <% if(role.equals("ADMIN")){ %>
-          <li><a href="membersList.jsp">회원관리</a></li>
+          <% if(role.equals("admin")){ %>
+          <li><a href="memberList.jsp">회원관리</a></li>
           <% } %>
        </ul>
        
