@@ -7,7 +7,7 @@ JSP, Java Servlet을 이용하여 로그인, 회원가입, 글 작성, 삭제 �
 
 개발자
 ---
-[이호중](https://github.com/romero9919/)
+[이호중 (Lee "Romero" Hojoong)](https://github.com/romero9919/)
 
 
 스택
