@@ -4,11 +4,17 @@
 ---
 JSP, Java Servlet을 이용하여 로그인, 회원가입, 글 작성, 삭제 및 수정 등의 기능을 구현한 프로젝트입니다.
 
+<br>
+<br>
+<br>
 
 개발자
 ---
 [이호중 (Lee "Romero" Hojoong)](https://github.com/romero9919/)
 
+<br>
+<br>
+<br>
 
 스택
 ---
@@ -23,6 +29,9 @@ JSP, Java Servlet을 이용하여 로그인, 회원가입, 글 작성, 삭제 �
 ![](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=Ubuntu&logoColor=white)
 ![](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=AmazonAWS&logoColor=white)
 
+<br>
+<br>
+<br>
 
 핵심 기능
 ---
@@ -31,6 +40,9 @@ JSP, Java Servlet을 이용하여 로그인, 회원가입, 글 작성, 삭제 �
 3. 게시판 CRUD(Create, Read, Update, Delete) 기능 구현
 4. 사진 파일 업로드 및 표시 기능 구현
 
+<br>
+<br>
+<br>
 
 서비스 흐름도
 ---
