@@ -1,8 +1,6 @@
 # JSP Board
 
 <br>
-<br>
-<br>
 
 개요
 ---
