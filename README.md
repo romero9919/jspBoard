@@ -6,13 +6,11 @@ JSP, Java Servlet을 이용하여 로그인, 회원가입, 글 작성, 삭제 �
 
 <br>
 <br>
-<br>
 
 개발자
 ---
 [이호중 (Lee "Romero" Hojoong)](https://github.com/romero9919/)
 
-<br>
 <br>
 <br>
 
@@ -31,7 +29,6 @@ JSP, Java Servlet을 이용하여 로그인, 회원가입, 글 작성, 삭제 �
 
 <br>
 <br>
-<br>
 
 핵심 기능
 ---
@@ -40,7 +37,6 @@ JSP, Java Servlet을 이용하여 로그인, 회원가입, 글 작성, 삭제 �
 3. 게시판 CRUD(Create, Read, Update, Delete) 기능 구현
 4. 사진 파일 업로드 및 표시 기능 구현
 
-<br>
 <br>
 <br>
 
